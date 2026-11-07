@@ -1,0 +1,13 @@
+# BlogFactory API for Railway: self-hosted switches baked in, storage bucket and migrations on boot.
+# Railway publishes literal template variables as required blanks, so the literals live here.
+FROM ghcr.io/blogfactoryhq/blogfactory-api:v0.1.0@sha256:9ec2b34a59bb009037ae27b078f82d275bee2f53a542abad9129ea2192bc2fd1
+ENV NODE_ENV=production \
+    BLOGFACTORY_SELF_HOSTED=true \
+    BLOGFACTORY_ALLOW_SIGNUP=true \
+    S3_ACCESS_KEY_ID=blogfactory \
+    S3_BUCKET=blogfactory \
+    S3_REGION=us-east-1
+COPY railway-api-start.sh /usr/local/bin/railway-api-start.sh
+CMD ["sh", "/usr/local/bin/railway-api-start.sh"]
+LABEL org.opencontainers.image.source="https://github.com/bon5co/blogfactory-railway" \
+      org.opencontainers.image.description="BlogFactory API for Railway: self-hosted mode baked in, bucket and migrations on boot"
