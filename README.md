@@ -9,4 +9,4 @@ for the Railway template. Nothing else in the application is changed.
   live in the image.
 - `ghcr.io/bon5co/blogfactory-web`: the upstream nginx image patched to listen on `$PORT` instead of 80.
 
-BlogFactory is licensed by its authors; see https://github.com/BlogFactoryHQ/blogfactory/blob/main/LICENSE
+BlogFactory is licensed AGPL-3.0 by its authors; see https://github.com/BlogFactoryHQ/blogfactory/blob/main/LICENSE
